@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type='text/javascript'>
+			var questionArray = [
+									2,
+									11,
+									37,
+									42
+								];
+		</script>
+	</head>
+	<body>
+
+		<h2>Leetcode Solver Suggestion by Abrar</h2>
+
+		<p id="data"></p>
+
+		<script type='text/javascript'>
+			/* Randomize array in-place using Durstenfeld shuffle algorithm */
+			function shuffleArray(array) {
+				for (var i = array.length - 1; i > 0; i--) {
+					var j = Math.floor(Math.random() * (i + 1));
+					var temp = array[i];
+					array[i] = array[j];
+					array[j] = temp;
+				}
+			}
+		</script>
+
+		<script type='text/javascript'>
+			var max = questionArray.length - 1;
+			var min = 0;
+			var randomIndex = Math.floor(Math.random() * (max - min)) + min;
+			randomIndex = (randomIndex + (new Date()).getMilliseconds()) % max;
+			shuffleArray(questionArray);
+			document.getElementById("data").innerHTML = "Please solve Leetcode Problem No - " + questionArray[randomIndex];
+		</script>
+
+	</body>
+</html> 
